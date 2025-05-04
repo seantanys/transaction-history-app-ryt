@@ -1,7 +1,10 @@
 
-type Transaction = {
-    id: string;
+export type Transaction = {
+    id: number;
+    type: string;
     amount: number;
-    date: Date;
+    currency: string;
+    date: string;
     description: string;
+    merchant?: string;
 }

@@ -8,6 +8,10 @@ import {  zustandStorage } from '../storage';
 interface PrivacyState {
     isPrivate: boolean;
     setIsPrivate: (isPrivate: boolean) => void;
+    isBiometricSupported: boolean;
+    setIsBiometricSupported: (isBiometricSupported: boolean) => void;
+    biometricType: 'face' | 'fingerprint' | null;
+    setBiometricType: (biometricType: 'face' | 'fingerprint' | null) => void;
 }
 
 const usePrivacyStore = create<PrivacyState>()(
@@ -15,6 +19,11 @@ const usePrivacyStore = create<PrivacyState>()(
         (set) => ({
             isPrivate: false,
             setIsPrivate: (isPrivate) => set({ isPrivate }),
+            isBiometricSupported: false,
+            setIsBiometricSupported: (isBiometricSupported) =>
+                set({ isBiometricSupported }),
+            biometricType: null,
+            setBiometricType: (biometricType) => set({ biometricType }),
         }),
         {
             name: 'privacy-storage',

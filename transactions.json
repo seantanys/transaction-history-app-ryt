@@ -5,158 +5,178 @@
         "amount": 500.00,
         "currency": "MYR",
         "description": "Salary deposit",
-        "date": "1672531200"
-        },
-        {
+        "date": "2025-04-01T00:00:00Z",
+        "merchant": "Google Inc."
+    },
+    {
         "id": 2,
         "type": "debit",
         "amount": 200.00,
         "currency": "MYR",
         "description": "Grocery shopping",
-        "date": "1672617600"
-        },
-        {
+        "date": "2025-04-02T00:00:00Z",
+        "merchant": "Jaya Grocer Sdn Bhd"
+    },
+    {
         "id": 3,
         "type": "credit",
         "amount": 1000.00,
         "currency": "MYR",
         "description": "Freelance payment",
-        "date": "1672704000"
-        },
-        {
+        "date": "2025-04-03T00:00:00Z",
+        "merchant": "John Lee Designs"
+    },
+    {
         "id": 4,
         "type": "debit",
         "amount": 150.00,
         "currency": "MYR",
         "description": "Utility bill",
-        "date": "1672790400"
-        },
-        {
+        "date": "2025-04-04T00:00:00Z",
+        "merchant": "Tenaga Nasional Berhad"
+    },
+    {
         "id": 5,
         "type": "credit",
         "amount": 750.00,
         "currency": "MYR",
         "description": "Bonus payment",
-        "date": "1672876800"
-        },
-        {
+        "date": "2025-04-05T00:00:00Z",
+        "merchant": "Google Inc."
+    },
+    {
         "id": 6,
         "type": "debit",
-        "amount": 300.00,
+        "amount": 48.20,
         "currency": "MYR",
         "description": "Dining out",
-        "date": "1672963200"
-        },
-        {
+        "date": "2025-04-06T00:00:00Z",
+        "merchant": "Village Park Restaurant"
+    },
+    {
         "id": 7,
         "type": "credit",
         "amount": 1200.00,
         "currency": "MYR",
         "description": "Project milestone payment",
-        "date": "1673049600"
-        },
-        {
+        "date": "2025-04-07T00:00:00Z",
+        "merchant": "Tech Solutions Sdn Bhd"
+    },
+    {
         "id": 8,
         "type": "debit",
         "amount": 400.00,
         "currency": "MYR",
         "description": "Car maintenance",
-        "date": "1673136000"
-        },
-        {
+        "date": "2025-04-08T00:00:00Z",
+        "merchant": "Ah Tan Auto Services"
+    },
+    {
         "id": 9,
         "type": "credit",
         "amount": 600.00,
         "currency": "MYR",
         "description": "Stock dividends",
-        "date": "1673222400"
-        },
-        {
+        "date": "2025-04-09T00:00:00Z",
+        "merchant": "Moomoo Holdings"
+    },
+    {
         "id": 10,
         "type": "debit",
         "amount": 250.00,
         "currency": "MYR",
         "description": "Online shopping",
-        "date": "1673308800"
-        },
-        {
+        "date": "2025-04-10T00:00:00Z",
+        "merchant": "Shopee Malaysia"
+    },
+    {
         "id": 11,
         "type": "credit",
         "amount": 800.00,
         "currency": "MYR",
         "description": "Tax refund",
-        "date": "1673395200"
-        },
-        {
+        "date": "2025-04-11T00:00:00Z",
+        "merchant": "LHDN"
+    },
+    {
         "id": 12,
         "type": "debit",
-        "amount": 100.00,
+        "amount": 12.00,
         "currency": "MYR",
         "description": "Coffee shop",
-        "date": "1673481600"
-        },
-        {
+        "date": "2025-04-12T00:00:00Z",
+        "merchant": "Zus Coffee Sdn Bhd"
+    },
+    {
         "id": 13,
         "type": "credit",
         "amount": 950.00,
         "currency": "MYR",
         "description": "Investment return",
-        "date": "1673568000"
-        },
-        {
+        "date": "2025-04-13T00:00:00Z",
+        "merchant": "Moomoo Holdings"
+    },
+    {
         "id": 14,
         "type": "debit",
         "amount": 350.00,
         "currency": "MYR",
         "description": "Gym membership",
-        "date": "1673654400"
-        },
-        {
+        "date": "2025-04-14T00:00:00Z",
+        "merchant": "Anytime Fitness"
+    },
+    {
         "id": 15,
         "type": "credit",
         "amount": 400.00,
         "currency": "MYR",
         "description": "Gift received",
-        "date": "1673740800"
-        },
-        {
+        "date": "2025-04-15T00:00:00Z",
+        "merchant": "Tan Ah Chai"
+    },
+    {
         "id": 16,
         "type": "debit",
         "amount": 500.00,
         "currency": "MYR",
         "description": "Insurance premium",
-        "date": "1673827200"
-        },
-        {
+        "date": "2025-04-16T00:00:00Z",
+        "merchant": "Great Eastern Life"
+    },
+    {
         "id": 17,
         "type": "credit",
         "amount": 1100.00,
         "currency": "MYR",
         "description": "Overtime payment",
-        "date": "1673913600"
-        },
-        {
+        "date": "2025-04-17T00:00:00Z",
+        "merchant": "Google Inc."
+    },
+    {
         "id": 18,
         "type": "debit",
         "amount": 450.00,
         "currency": "MYR",
         "description": "Home repair",
-        "date": "1674000000"
-        },
-        {
+        "date": "2025-04-18T00:00:00Z",
+        "merchant": "Muthu the Contractor"
+    },
+    {
         "id": 19,
         "type": "credit",
-        "amount": 700.00,
+        "amount": 200.00,
         "currency": "MYR",
-        "description": "Lottery win",
-        "date": "1674086400"
-        },
-        {
+        "description": "Passed GO",
+        "date": "2025-04-19T00:00:00Z",
+        "merchant": "Monopoly Inc."
+    },
+    {
         "id": 20,
         "type": "debit",
-        "amount": 300.00,
+        "amount": 122.00,
         "currency": "MYR",
         "description": "Fuel expense",
-        "date": "1674172800"
+        "date": "2025-04-20T00:00:00Z",
+        "merchant": "Petronas Gas Berhad"
     }
 ]

@@ -9,12 +9,16 @@ import {
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import * as React from "react";
+import * as LocalAuthentication from "expo-local-authentication";
 import { Platform } from "react-native";
 import { NAV_THEME } from "~/lib/constants";
 import { useColorScheme } from "~/lib/useColorScheme";
 import { PortalHost } from "@rn-primitives/portal";
 import { ThemeToggle } from "~/components/ThemeToggle";
 import { setAndroidNavigationBar } from "~/lib/android-navigation-bar";
+import { LogOut, Settings } from "lucide-react-native";
+import { useEffect } from "react";
+import { usePrivacy } from "~/lib/hooks/usePrivacy";
 
 const LIGHT_THEME: Theme = {
   ...DefaultTheme,
@@ -32,6 +36,8 @@ export {
 
 export default function RootLayout() {
   const hasMounted = React.useRef(false);
+  const { isBiometricSupported, setIsBiometricSupported, setBiometricType } =
+    usePrivacy();
   const { colorScheme, isDarkColorScheme } = useColorScheme();
   const [isColorSchemeLoaded, setIsColorSchemeLoaded] = React.useState(false);
 
@@ -49,6 +55,27 @@ export default function RootLayout() {
     hasMounted.current = true;
   }, []);
 
+  useEffect(() => {
+    // check biometrics capabilities
+    LocalAuthentication.isEnrolledAsync().then((data) => {
+      setIsBiometricSupported(data);
+    });
+
+    LocalAuthentication.supportedAuthenticationTypesAsync().then((data) => {
+      if (
+        data.includes(LocalAuthentication.AuthenticationType.FACIAL_RECOGNITION)
+      ) {
+        setBiometricType("face");
+      } else if (
+        data.includes(LocalAuthentication.AuthenticationType.FINGERPRINT)
+      ) {
+        setBiometricType("fingerprint");
+      } else {
+        setBiometricType(null);
+      }
+    });
+  }, []);
+
   if (!isColorSchemeLoaded) {
     return null;
   }
@@ -61,7 +88,13 @@ export default function RootLayout() {
           name='index'
           options={{
             title: "Transactions",
-            headerRight: () => <ThemeToggle />,
+            headerRight: () => <LogOut size={24} />,
+          }}
+        />
+        <Stack.Screen
+          name='transaction/[id]'
+          options={{
+            title: "Transaction Details",
           }}
         />
       </Stack>
