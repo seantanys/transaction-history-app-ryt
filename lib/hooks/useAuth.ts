@@ -5,15 +5,15 @@ import { createSelectors } from '../utils';
 interface AuthState {
     username: string | null;
     status: 'signOut' | 'signIn';
-    signIn: (username: string) => void;
+    signIn: () => void;
     signOut: () => void;
   }
 
   const _useAuth = create<AuthState>((set, get) => ({
     username: null,
     status: 'signOut',
-    signIn: (username) => {
-      set({ username, status: 'signIn' });
+    signIn: () => {
+      set({ status: 'signIn' });
     },
     signOut: () => {
       set({ username: null, status: 'signOut' });
@@ -21,8 +21,8 @@ interface AuthState {
   }));
 
 export const useAuth = createSelectors(_useAuth);
-export const signIn = (username: string) => {
-    _useAuth.getState().signIn(username);
+export const signIn = () => {
+    _useAuth.getState().signIn();
   }
 export const signOut = () => {
     _useAuth.getState().signOut();

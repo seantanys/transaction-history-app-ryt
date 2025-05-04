@@ -2,12 +2,14 @@ import { Pressable, View } from "react-native";
 import { Transaction } from "~/lib/types/transaction";
 import { Text } from "../ui/text";
 import { useRouter } from "expo-router";
+import { usePrivacy } from "~/lib/hooks/usePrivacy";
 
 interface TransactionItemProps {
   transaction: Transaction;
 }
 
 export function TransactionItem({ transaction }: TransactionItemProps) {
+  const { isPrivate } = usePrivacy();
   const router = useRouter();
 
   return (
@@ -20,7 +22,9 @@ export function TransactionItem({ transaction }: TransactionItemProps) {
           </Text>
         </View>
         <Text className='text-lg font-bold'>
-          {transaction.type === "credit"
+          {isPrivate
+            ? "RM ****"
+            : transaction.type === "credit"
             ? `+RM${transaction.amount}`
             : `-RM${transaction.amount}`}
         </Text>

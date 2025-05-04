@@ -3,12 +3,14 @@ import { Transaction } from "~/lib/types/transaction";
 import { Text } from "../ui/text";
 import { ShoppingCart } from "lucide-react-native";
 import { Button } from "../ui/button";
+import { usePrivacy } from "~/lib/hooks/usePrivacy";
 
 export function TransactionDetail({
   transaction,
 }: {
   transaction: Transaction;
 }) {
+  const { isPrivate } = usePrivacy();
   return (
     <View className='flex flex-col items-start gap-4 py-4'>
       <View className='rounded-full bg-blue-300 p-4'>
@@ -20,7 +22,9 @@ export function TransactionDetail({
       <View>
         <Text className='text-muted-foreground text-lg'>Amount</Text>
         <Text className='text-xl font-bold'>
-          {transaction.type === "credit"
+          {isPrivate
+            ? "RM ****"
+            : transaction.type === "credit"
             ? `+RM${transaction.amount}`
             : `-RM${transaction.amount}`}
         </Text>

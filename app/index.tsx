@@ -9,6 +9,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Text } from "~/components/ui/text";
 import { usePrivacy } from "~/lib/hooks/usePrivacy";
 import { useColorScheme } from "~/lib/useColorScheme";
+import { useEffect } from "react";
+import { useAuth } from "~/lib/hooks/useAuth";
+import { useRouter } from "expo-router";
 
 const RYT_LOGO_AVATAR =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1A0An6cDX4cffwkZ87ihwWbQhkQ4-n7oZLQ&s";
@@ -16,6 +19,8 @@ const RYT_LOGO_AVATAR =
 export default function Screen() {
   const { isDarkColorScheme } = useColorScheme();
   const { isPrivate, setIsPrivate } = usePrivacy();
+  const { status } = useAuth();
+  const router = useRouter();
 
   const handleAuthorization = () => {
     // use biometric authentication
@@ -30,13 +35,20 @@ export default function Screen() {
           setIsPrivate(!isPrivate);
         } else {
           console.log(result.error);
-          console.log("Authentication failed");
         }
       })
       .catch((error) => {
         console.error("Error during authentication", error);
       });
   };
+
+  useEffect(() => {
+    if (status === "signOut") {
+      setTimeout(() => {
+        router.replace("/login");
+      }, 100);
+    }
+  }, [status, router]);
 
   return (
     <View className='flex-1 gap-5 p-4 bg-secondary/30'>

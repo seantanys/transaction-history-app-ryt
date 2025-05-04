@@ -17,7 +17,7 @@ interface PrivacyState {
 const usePrivacyStore = create<PrivacyState>()(
     persist(
         (set) => ({
-            isPrivate: false,
+            isPrivate: true,
             setIsPrivate: (isPrivate) => set({ isPrivate }),
             isBiometricSupported: false,
             setIsBiometricSupported: (isBiometricSupported) =>

@@ -24,6 +24,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "expo": "^52.0.25",
+    "expo-linear-gradient": "^14.1.4",
     "expo-linking": "~7.0.4",
     "expo-local-authentication": "~15.0.2",
     "expo-navigation-bar": "~4.0.7",
