@@ -8,7 +8,7 @@ export function TransactionList() {
   return (
     <View className='flex-1'>
       <Text className='text-lg font-bold mb-2'>Transaction History</Text>
-      <View className='bg-neutral-900 rounded-lg h-full'>
+      <View className='bg-neutral-300 dark:bg-neutral-900 rounded-lg h-full'>
         <FlashList
           data={TRANSACTIONS}
           renderItem={({ item }) => <TransactionItem transaction={item} />}
